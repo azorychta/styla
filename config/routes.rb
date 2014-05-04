@@ -1,4 +1,8 @@
 Styla::Application.routes.draw do
+  resources :collections
+
+  resources :products
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
