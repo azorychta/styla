@@ -6,6 +6,12 @@
       <th>Name</th>
       <th>Price</th>
       <th>Picture</th>
+      <th>Collection1</th>
+      <th>Collection2</th>
+      <th>Collection3</th>
+      <th>Collection4</th>
+      <th>Collection5</th>
+      <th>Collection6</th>
       <th></th>
       <th></th>
       <th></th>
@@ -18,6 +24,12 @@
         <td><%= product.name %></td>
         <td><%= product.price %></td>
         <td><%= product.picture %></td>
+        <td><%= product.collection1_id %></td>
+        <td><%= product.collection2_id %></td>
+        <td><%= product.collection3_id %></td>
+        <td><%= product.collection4_id %></td>
+        <td><%= product.collection5_id %></td>
+        <td><%= product.collection6_id %></td>
         <td><%= link_to 'Show', product %></td>
         <td><%= link_to 'Edit', edit_product_path(product) %></td>
         <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -9,4 +9,20 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Styla::Application.config.secret_key_base = '19048474b25ba4c967d8c412efb341262707ce419411d8dfbd0e6eb65742ea350d715b9fcd2ed142f783ade494c90a58c5586314c06ec52139668e08ce549572'
+
+require 'securerandom'
+
+def secure_token
+	token_file = Rails.root.join('.secret')
+	if File.exist?(token_file)
+		# USe the xisting token
+		File.read(token_file).chomp
+	else
+		# gen new token and store it in token_file
+		token = SecureRandom.hex(64)
+		File.write(token_file, token)
+		token
+	end
+end
+
+Styla::Application.config.secret_key_base = secure_token

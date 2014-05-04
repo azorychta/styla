@@ -6,6 +6,12 @@
       <th>Name</th>
       <th>Price</th>
       <th>Picture</th>
+      <th>Product1</th>
+      <th>Product2</th>
+      <th>Product3</th>
+      <th>Product4</th>
+      <th>Product5</th>
+      <th>Product6</th>
       <th></th>
       <th></th>
       <th></th>
@@ -18,6 +24,12 @@
         <td><%= collection.name %></td>
         <td><%= collection.price %></td>
         <td><%= collection.picture %></td>
+        <td><%= collection.product1_id %></td>
+        <td><%= collection.product2_id %></td>
+        <td><%= collection.product3_id %></td>
+        <td><%= collection.product4_id %></td>
+        <td><%= collection.product5_id %></td>
+        <td><%= collection.product6_id %></td>
         <td><%= link_to 'Show', collection %></td>
         <td><%= link_to 'Edit', edit_collection_path(collection) %></td>
         <td><%= link_to 'Destroy', collection, method: :delete, data: { confirm: 'Are you sure?' } %></td>
