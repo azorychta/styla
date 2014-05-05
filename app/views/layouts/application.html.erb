@@ -9,6 +9,48 @@
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+
+    <script>
+ // Drag and Drop functions
+ // drop item
+  function allowDrop(ev)
+  {
+  ev.preventDefault();
+  this.style.position = 'absolute'
+  }
+  // allows dragging
+  function drag(ev)
+  {
+  ev.dataTransfer.setData("Text",ev.target.id);
+  this.style.position = 'absolute'
+  }
+  //not sure
+  function drop(ev)
+  {
+  ev.preventDefault();
+  var data=ev.dataTransfer.getData("Text");
+  ev.target.appendChild(document.getElementById(data));
+  this.style.position = 'absolute'
+  }
+  </script>
+  <script type="text/javascript" src="stylerwidgetmaker.js">
+  //savind the div
+  function saveEdits() {
+
+//get the editable element
+var editElem = document.getElementById("collage");
+
+//get the edited element content
+var userVersion = editElem.innerHTML;
+
+//save the content to local storage
+localStorage.userEdits = userVersion;
+
+//write a confirmation to the user
+document.getElementById("update").innerHTML="Edits saved!";
+
+}
+  </script>
   </head>
   <body>
  

@@ -1,0 +1,15 @@
+  <div class="row">
+		  <div class="col-md-7" id="collage" ondrop="drop(event)" ondragover="allowDrop(event)" contenteditable="true"></div>
+		  <div class="col-md-5" id="productbox" ondrop="drop(event)" ondragover="allowDrop(event)"> 
+
+		  <% @prod = Product.all %>
+      	<% @prod.each do |pro| %>
+          	<%= image_tag(@prod.find(pro).picture, :width => "100px", :alt => @prod.find(pro).name, :id => pro, :draggable => "true", :ondragstart => "drag(event)") %> 
+          	<% end %>
+          	
+	  </div>
+	</div>
+    <div class="row">
+		  <div class="col-md-12">
+	<input type="button" value="save my edits" onclick="saveEdits()"/></div>
+</div>
