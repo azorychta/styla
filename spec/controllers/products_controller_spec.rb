@@ -142,19 +142,5 @@ describe ProductsController do
     end
   end
 
-  describe "DELETE destroy" do
-    it "destroys the requested product" do
-      product = Product.create! valid_attributes
-      expect {
-        delete :destroy, {:id => product.to_param}, valid_session
-      }.to change(Product, :count).by(-1)
-    end
-
-    it "redirects to the products list" do
-      product = Product.create! valid_attributes
-      delete :destroy, {:id => product.to_param}, valid_session
-      response.should redirect_to(products_url)
-    end
-  end
 
 end

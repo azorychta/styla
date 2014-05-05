@@ -141,20 +141,4 @@ describe CollectionsController do
       end
     end
   end
-
-  describe "DELETE destroy" do
-    it "destroys the requested collection" do
-      collection = Collection.create! valid_attributes
-      expect {
-        delete :destroy, {:id => collection.to_param}, valid_session
-      }.to change(Collection, :count).by(-1)
-    end
-
-    it "redirects to the collections list" do
-      collection = Collection.create! valid_attributes
-      delete :destroy, {:id => collection.to_param}, valid_session
-      response.should redirect_to(collections_url)
-    end
-  end
-
 end
