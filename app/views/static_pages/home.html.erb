@@ -70,86 +70,19 @@
   <!--/.items -->
     <div class="row-fluid">
       <ul class="thumbnails">
+      	<% @prod = Product.all %>
+      	<% @prod.each do |pro| %>
         <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
           <article class="thumbnail">
-            <img src="sampleproducts/pinkheartsweater.jpg"width="200" alt="">
+          	<%= image_tag(@prod.find(pro).picture, :width => "200px", :alt => @prod.find(pro).name) %> 
             <div class="caption">
-             <h3>Red Button Down</h3>
-              <p>red, the blood of angry men</p>
+             <h3><%= @prod.find(pro).name %></h3>
+              <p><%= @prod.find(pro).name %></p>
               <p><a href="#" class="btn btn-default" role="button">Button</a></p>
             </div>
           </article>
         </li>
-        <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
-          <article class="thumbnail">
-            <img src="sampleproducts/BenAmun.jpg" width="200" alt="">
-            <div class="caption">
-             <h3>Orange Paisley Dress</h3>
-              <p>such wow</p>
-              <p><a href="#" class="btn btn-default" role="button">Button</a></p>
-            </div>
-          </article>
-        </li>
-        <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
-          <article class="thumbnail">
-            <img src="sampleproducts/DavidAubrey.jpg" width="200" alt="">
-            <div class="caption">
-               <h3>Orange Leather Skirt</h3>
-              <p>because orange</p>
-              <p><a href="#" class="btn btn-default" role="button">Button</a></p>
-            </div>
-          </article>
-        </li>
-        <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
-          <article class="thumbnail">
-            <img src="sampleproducts/ring1.jpg" width="200" alt="">
-            <div class="caption">
-             <h3>Ring 1</h3>
-              <p>Shiny!!!</p>
-              <p><a href="#" class="btn btn-default" role="button">Button</a></p>
-            </div>
-          </article>
-        </li>
-        <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
-          <article class="thumbnail">
-            <img src="sampleproducts/ring2.jpg" width="200" alt="">
-            <div class="caption">
-             <h3>Ring 2</h3>
-              <p>OMG pants!</p>
-              <p><a href="#" class="btn btn-default" role="button">Button</a></p>
-            </div>
-          </article>
-        </li>
-        <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
-          <article class="thumbnail">
-            <img src="sampleproducts/cross.jpg" width="200" alt="">
-            <div class="caption">
-             <h3>Orange Stone Necklace</h3>
-              <p>nicy nice</p>
-              <p><a href="#" class="btn btn-default" role="button">Button</a></p>
-            </div>
-          </article>
-        </li>
-        <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
-          <article class="thumbnail">
-            <img src="sampleproducts/RedButtonDown.jpg" width="200" alt="">
-            <div class="caption">
-             <h3>Red Shirt</h3>
-              <p>squeeqy clean</p>
-              <p><a href="#" class="btn btn-default" role="button">Button</a></p>
-            </div>
-          </article>
-        </li>
-        <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
-          <article class="thumbnail">
-            <img src="sampleproducts/turquoisebracelets.jpg" width="200" alt="">
-            <div class="caption">
-             <h3>Turquoise Bracelets</h3>
-              <p></p>
-              <p><a href="#" class="btn btn-default" role="button">Button</a></p>
-            </div>
-          </article>
-        </li>
+        <% end %>
       </ul>
     </div>
 </div>
